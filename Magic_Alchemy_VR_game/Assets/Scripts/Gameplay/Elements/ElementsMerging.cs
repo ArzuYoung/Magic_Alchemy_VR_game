@@ -23,11 +23,12 @@ namespace Gameplay.Elements
             var resultElementTypeNullable = GetMergeElement?.Invoke(_type, other.Type);
             var resultElementType = resultElementTypeNullable.GetValueOrDefault(ElementType.None);
 
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+
             if (resultElementType == ElementType.None)
                 return;
 
-            Destroy(gameObject);
-            Destroy(other.gameObject);
             CreateNew(resultElementType);
         }
 

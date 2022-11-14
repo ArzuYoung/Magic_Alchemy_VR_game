@@ -7,17 +7,15 @@ namespace Gameplay.Elements
     {
         private readonly MergePoint[] _mergeList = new[]
         {
-        new MergePoint(ElementType.Water, ElementType.Water, ElementType.Cube),
-        new MergePoint(ElementType.Water, ElementType.Air, ElementType.Cube),
-        new MergePoint(ElementType.Water, ElementType.Ground, ElementType.Cube),
-        new MergePoint(ElementType.Water, ElementType.Fire, ElementType.Cube),
-        new MergePoint(ElementType.Air, ElementType.Air, ElementType.Cube),
-        new MergePoint(ElementType.Air, ElementType.Ground, ElementType.Cube),
-        new MergePoint(ElementType.Air, ElementType.Fire, ElementType.Cube),
-        new MergePoint(ElementType.Ground, ElementType.Ground, ElementType.Cube),
-        new MergePoint(ElementType.Ground, ElementType.Fire, ElementType.Cube),
-        new MergePoint(ElementType.Fire, ElementType.Fire, ElementType.Cube),
-    };
+            new MergePoint(ElementType.Water, ElementType.Water, ElementType.Lake),
+            new MergePoint(ElementType.Water, ElementType.Air, ElementType.Cloud),
+            new MergePoint(ElementType.Water, ElementType.Fire, ElementType.Steam),
+            new MergePoint(ElementType.Water, ElementType.Ground, ElementType.Grass),
+            new MergePoint(ElementType.Air, ElementType.Air, ElementType.Wind),
+            new MergePoint(ElementType.Air, ElementType.Fire, ElementType.Warm),
+            new MergePoint(ElementType.Ground, ElementType.Ground, ElementType.Rock),
+            new MergePoint(ElementType.Fire, ElementType.Ground, ElementType.Lava),
+        };
 
         public ElementType GetBy(ElementType first, ElementType second)
         {
