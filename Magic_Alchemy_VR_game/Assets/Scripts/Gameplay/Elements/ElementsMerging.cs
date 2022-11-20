@@ -1,37 +1,42 @@
 using UnityEngine;
 using System;
 
-public class ElementsMerging : MonoBehaviour
+namespace Gameplay.Elements
 {
-    [SerializeField] private ElementType _type;
-
-    public ElementType Type { get => _type; }
-    public bool Active { get; private set; }
-
-    public static event Func<ElementType, ElementType, ElementType> GetMergeElement;
-    public static event Func<ElementType, GameObject> GetElementPrefab;
-
-    private void OnCollisionEnter(Collision collision)
+    public class ElementsMerging : MonoBehaviour
     {
-        var other = collision.gameObject.GetComponent<ElementsMerging>();
-        if (other == null || other.Active)
-            return;
+        [SerializeField] private ElementType _type;
 
-        Active = true;
-        var resultElementTypeNullable = GetMergeElement?.Invoke(_type, other.Type);
-        var resultElementType = resultElementTypeNullable.GetValueOrDefault(ElementType.None);
+        public ElementType Type { get => _type; }
+        public bool Active { get; private set; }
 
-        if (resultElementType == ElementType.None)
-            return;
+        public static event Func<ElementType, ElementType, ElementType> GetMergeElement;
+        public static event Func<ElementType, GameObject> GetElementPrefab;
 
-        Destroy(gameObject);
-        Destroy(other.gameObject);
-        CreateNew(resultElementType);
+        private void OnCollisionEnter(Collision collision)
+        {
+            var other = collision.gameObject.GetComponent<ElementsMerging>();
+            if (other == null || other.Active)
+                return;
+
+            Active = true;
+            var resultElementTypeNullable = GetMergeElement?.Invoke(_type, other.Type);
+            var resultElementType = resultElementTypeNullable.GetValueOrDefault(ElementType.None);
+
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+
+            if (resultElementType == ElementType.None)
+                return;
+
+            CreateNew(resultElementType);
+        }
+
+        private void CreateNew(ElementType type)
+        {
+            var element = GetElementPrefab?.Invoke(type);
+            Instantiate(element, transform.position, Quaternion.identity);
+        }
     }
 
-    private void CreateNew(ElementType type)
-    {
-        var element = GetElementPrefab?.Invoke(type);
-        Instantiate(element, transform.position, Quaternion.identity);
-    }
 }

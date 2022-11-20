@@ -1,22 +1,27 @@
 using UnityEngine;
+using Gameplay.Elements;
 
-[RequireComponent(typeof(ElementsGuide))]
-public class MergeElementsHandler : MonoBehaviour
+namespace EventHandlers
 {
-    private ElementsGuide _elementsGuide;
-
-    private void Awake()
+    [RequireComponent(typeof(ElementsGuide))]
+    public class MergeElementsHandler : MonoBehaviour
     {
-        _elementsGuide = GetComponent<ElementsGuide>();
+        private ElementsGuide _elementsGuide;
+
+        private void Awake()
+        {
+            _elementsGuide = GetComponent<ElementsGuide>();
+        }
+
+        private void OnEnable()
+        {
+            ElementsMerging.GetMergeElement += _elementsGuide.GetBy;
+        }
+
+        private void OnDisable()
+        {
+            ElementsMerging.GetMergeElement -= _elementsGuide.GetBy;
+        }
     }
 
-    private void OnEnable()
-    {
-        ElementsMerging.GetMergeElement += _elementsGuide.GetBy;
-    }
-
-    private void OnDisable()
-    {
-        ElementsMerging.GetMergeElement -= _elementsGuide.GetBy;
-    }
 }

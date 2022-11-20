@@ -5,5 +5,13 @@ public enum ElementType
     Ground,
     Fire,
     Air,
+    Cloud,
+    Grass,
+    Lake,
+    Lava,
+    Rock,
+    Wind,
+    Warm,
+    Steam,
     Cube
 }
