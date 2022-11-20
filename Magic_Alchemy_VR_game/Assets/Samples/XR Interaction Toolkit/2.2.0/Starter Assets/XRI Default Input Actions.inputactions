@@ -327,45 +327,12 @@
                 },
                 {
                     "name": "",
-                    "id": "b34c79c1-ab5e-4851-87ac-abc43705eae0",
-                    "path": "<XRController>{LeftHand}/triggerPressed",
+                    "id": "4eb41517-4807-4bb1-a373-d457bda8ba7c",
+                    "path": "<ViveController>{LeftHand}/trackpadClicked",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Generic XR Controller",
+                    "groups": "",
                     "action": "UI Press",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "71d94579-1bf4-4034-ab9e-e7166842128f",
-                    "path": "<XRController>{LeftHand}/trigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Generic XR Controller",
-                    "action": "UI Press Value",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8ed313a6-c966-4669-8a62-4bb2319d485b",
-                    "path": "<XRController>{LeftHand}/Primary2DAxis",
-                    "interactions": "",
-                    "processors": "ScaleVector2(y=0),StickDeadzone",
-                    "groups": "Generic XR Controller",
-                    "action": "Rotate Anchor",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "370f21e3-a80b-4b07-990b-299c2da0929a",
-                    "path": "<XRController>{LeftHand}/Primary2DAxis",
-                    "interactions": "",
-                    "processors": "ScaleVector2(x=0),StickDeadzone",
-                    "groups": "Generic XR Controller",
-                    "action": "Translate Anchor",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -817,45 +784,12 @@
                 },
                 {
                     "name": "",
-                    "id": "92bb5b8f-bf48-4dab-af05-50a865773895",
-                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "id": "780ced53-b749-4cdc-b97c-a459c0192f02",
+                    "path": "<ViveController>{RightHand}/trackpadClicked",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Generic XR Controller",
+                    "groups": "",
                     "action": "UI Press",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5b4ef08d-9ddd-4f0a-8539-d1114d14d143",
-                    "path": "<XRController>{RightHand}/trigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Generic XR Controller",
-                    "action": "UI Press Value",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5c0fa06c-b670-477f-a95d-eb3b4880e439",
-                    "path": "<XRController>{RightHand}/Primary2DAxis",
-                    "interactions": "",
-                    "processors": "ScaleVector2(y=0),StickDeadzone",
-                    "groups": "Generic XR Controller",
-                    "action": "Rotate Anchor",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4caf4e8d-13e5-4bd6-8f42-b6b99c315ad0",
-                    "path": "<XRController>{RightHand}/Primary2DAxis",
-                    "interactions": "",
-                    "processors": "ScaleVector2(x=0),StickDeadzone",
-                    "groups": "Generic XR Controller",
-                    "action": "Translate Anchor",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
