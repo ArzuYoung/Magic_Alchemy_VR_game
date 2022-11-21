@@ -8,11 +8,21 @@ public class TeleportationManager : MonoBehaviour
     [SerializeField] private XRRayInteractor rayInteractorLeft;
     [SerializeField] private XRRayInteractor rayInteractorRight;
     [Space]
+    [SerializeField] private GameObject controllerRightGrab;
+    [SerializeField] private GameObject controllerRightTeleport;
+    [SerializeField] private GameObject controllerLeftGrab;
+    [SerializeField] private GameObject controllerLeftTeleport;
+    [Space]
     [SerializeField] private TeleportationProvider teleportationProvider;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
+        controllerRightGrab.SetActive(true);
+        controllerRightTeleport.SetActive(false);
+        
+        controllerLeftGrab.SetActive(true);
+        controllerLeftTeleport.SetActive(false);
+        
         rayInteractorLeft.enabled = false;
         rayInteractorRight.enabled = false;
     
@@ -30,11 +40,17 @@ public class TeleportationManager : MonoBehaviour
         if (rayInteractorRight.enabled) return;
         
         rayInteractorLeft.enabled = true;
+        
+        controllerLeftGrab.SetActive(false);
+        controllerLeftTeleport.SetActive(true);
     }
     
     private void DeactivateRayInteractorLeft()
     {
         rayInteractorLeft.enabled = false;
+        
+        controllerLeftGrab.SetActive(true);
+        controllerLeftTeleport.SetActive(false);
     }
     
     private void ActivateRayInteractorRight()
@@ -42,11 +58,17 @@ public class TeleportationManager : MonoBehaviour
         if (rayInteractorLeft.enabled) return;
         
         rayInteractorRight.enabled = true;
+        
+        controllerRightGrab.SetActive(false);
+        controllerRightTeleport.SetActive(true);
     }
     
     private void DeactivateRayInteractorRight()
     {
         rayInteractorRight.enabled = false;
+        
+        controllerRightGrab.SetActive(true);
+        controllerRightTeleport.SetActive(false);
     }
 
     private void TeleportToPointContactOfLeftBeam()

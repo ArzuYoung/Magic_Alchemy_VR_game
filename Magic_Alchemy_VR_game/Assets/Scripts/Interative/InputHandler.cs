@@ -27,6 +27,8 @@ public class InputHandler : MonoBehaviour
     
     private bool isRightTeleportButton = false;
 
+    private InputAction select;
+
     private void Awake()
     {
         if (Instance == null)
@@ -46,6 +48,8 @@ public class InputHandler : MonoBehaviour
         
         var leftHandActionMap = actionAssets.FindActionMap("XRI LeftHand Interaction");
         leftTeleportAction = leftHandActionMap.FindAction("Activate");
+
+        select = rightHandActionMap.FindAction("Select");
     }
 
     private void Update()
@@ -58,21 +62,17 @@ public class InputHandler : MonoBehaviour
         
         isLeftTeleportButton = IsLeftTeleportButton_Pressed();
         isRightTeleportButton = IsRightTeleportButton_Pressed();
+        
+        if (select.IsPressed()) Debug.Log("Grip Is Pressed!");
     }
 
-    private bool IsLeftTeleportButton_Pressed()
-    {
-        return leftTeleportAction.IsPressed();
-    }
+    private bool IsLeftTeleportButton_Pressed() => leftTeleportAction.IsPressed();
     
     private bool IsLeftTeleportButton_Down() => !isLeftTeleportButton && IsLeftTeleportButton_Pressed();
     
     private bool IsLeftTeleportButton_Up() => isLeftTeleportButton && !IsLeftTeleportButton_Pressed();
     
-    private bool IsRightTeleportButton_Pressed()
-    {
-        return rightTeleportAction.IsPressed();
-    }
+    private bool IsRightTeleportButton_Pressed() => rightTeleportAction.IsPressed();
     
     private bool IsRightTeleportButton_Down() => !isRightTeleportButton && IsRightTeleportButton_Pressed();
     
