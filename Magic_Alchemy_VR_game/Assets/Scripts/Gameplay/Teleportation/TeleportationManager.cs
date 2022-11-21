@@ -4,30 +4,73 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class TeleportationManager : MonoBehaviour
 {
-    [SerializeField] private XRRayInteractor rayInteractor;
+    [Space]
+    [SerializeField] private XRRayInteractor rayInteractorLeft;
+    [SerializeField] private XRRayInteractor rayInteractorRight;
+    [Space]
     [SerializeField] private TeleportationProvider teleportationProvider;
 
     // Start is called before the first frame update
     void Start()
     {
-        InputHandler.Instance.OnTeleportButton_Down.AddListener(ActivateRayInteractor);
-        InputHandler.Instance.OnTeleportButton_Up.AddListener(TeleportToPointContactOfBeam);
-        InputHandler.Instance.OnTeleportButton_Up.AddListener(DeactivateRayInteractor);
+        rayInteractorLeft.enabled = false;
+        rayInteractorRight.enabled = false;
+    
+        InputHandler.Instance.OnLeftTeleportButton_Down.AddListener(ActivateRayInteractorLeft);
+        InputHandler.Instance.OnLeftTeleportButton_Up.AddListener(TeleportToPointContactOfLeftBeam);
+        InputHandler.Instance.OnLeftTeleportButton_Up.AddListener(DeactivateRayInteractorLeft);
+        
+        InputHandler.Instance.OnRightTeleportButton_Down.AddListener(ActivateRayInteractorRight);
+        InputHandler.Instance.OnRightTeleportButton_Up.AddListener(TeleportToPointContactOfRightBeam);
+        InputHandler.Instance.OnRightTeleportButton_Up.AddListener(DeactivateRayInteractorRight);
     }
 
-    private void ActivateRayInteractor()
+    private void ActivateRayInteractorLeft()
     {
-        rayInteractor.enabled = true;
+        if (rayInteractorRight.enabled) return;
+        
+        rayInteractorLeft.enabled = true;
     }
     
-    private void DeactivateRayInteractor()
+    private void DeactivateRayInteractorLeft()
     {
-        rayInteractor.enabled = false;
+        rayInteractorLeft.enabled = false;
+    }
+    
+    private void ActivateRayInteractorRight()
+    {
+        if (rayInteractorLeft.enabled) return;
+        
+        rayInteractorRight.enabled = true;
+    }
+    
+    private void DeactivateRayInteractorRight()
+    {
+        rayInteractorRight.enabled = false;
     }
 
-    private void TeleportToPointContactOfBeam()
+    private void TeleportToPointContactOfLeftBeam()
     {
-        if (!rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit))
+        if (rayInteractorRight.enabled) return;
+        
+        if (!rayInteractorLeft.TryGetCurrent3DRaycastHit(out RaycastHit hit))
+        {
+            return;
+        }
+        
+        var teleportRequest = new TeleportRequest()
+        {
+            destinationPosition = hit.point,
+        };
+        
+        teleportationProvider.QueueTeleportRequest(teleportRequest);
+    }
+    
+    private void TeleportToPointContactOfRightBeam()
+    {
+        if (rayInteractorLeft.enabled) return;
+        
+        if (!rayInteractorRight.TryGetCurrent3DRaycastHit(out RaycastHit hit))
         {
             return;
         }

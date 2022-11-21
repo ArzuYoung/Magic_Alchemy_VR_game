@@ -5,31 +5,41 @@ using System.ComponentModel.Design.Serialization;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit.Inputs.Composites;
 
 public class InputHandler : MonoBehaviour
 {
     public static InputHandler Instance;
-    
-    public UnityEvent OnTeleportButton_Down;
-    public UnityEvent OnTeleportButton_Pressed;
-    public UnityEvent OnTeleportButton_Up;
-    
+ 
     [SerializeField] private InputActionAsset actionAssets;
+    
+    [HideInInspector] public UnityEvent OnLeftTeleportButton_Down;
+    [HideInInspector] public UnityEvent OnLeftTeleportButton_Up;
 
-    private InputAction rightTeleportAction;
     private InputAction leftTeleportAction;
+    
+    private bool isLeftTeleportButton = false;
+    
+    [HideInInspector] public UnityEvent OnRightTeleportButton_Down;
+    [HideInInspector] public UnityEvent OnRightTeleportButton_Up;
+    
+    private InputAction rightTeleportAction;
+    
+    private bool isRightTeleportButton = false;
 
     private void Awake()
     {
-        if (!Instance)
+        if (Instance == null)
             Instance = this;
     }
 
     private void Start()
     {
-        if (OnTeleportButton_Down == null) OnTeleportButton_Down = new UnityEvent();
-        if (OnTeleportButton_Pressed == null) OnTeleportButton_Pressed = new UnityEvent();
-        if (OnTeleportButton_Up == null) OnTeleportButton_Up = new UnityEvent();
+        if (OnLeftTeleportButton_Down == null) OnLeftTeleportButton_Down = new UnityEvent();
+        if (OnLeftTeleportButton_Up == null) OnLeftTeleportButton_Up = new UnityEvent();
+        
+        if (OnLeftTeleportButton_Down == null) OnRightTeleportButton_Down = new UnityEvent();
+        if (OnLeftTeleportButton_Up == null) OnRightTeleportButton_Up = new UnityEvent();
         
         var rightHandActionMap = actionAssets.FindActionMap("XRI RightHand Interaction");
         rightTeleportAction = rightHandActionMap.FindAction("Activate");
@@ -40,24 +50,31 @@ public class InputHandler : MonoBehaviour
 
     private void Update()
     {
-        if (IsTeleportButton_Down()) OnTeleportButton_Down.Invoke();
-        if (IsTeleportButton_Pressed()) OnTeleportButton_Pressed.Invoke();
-        if (IsTeleportButton_Up()) OnTeleportButton_Up.Invoke();
+        if (IsLeftTeleportButton_Down()) OnLeftTeleportButton_Down.Invoke();
+        if (IsLeftTeleportButton_Up()) OnLeftTeleportButton_Up.Invoke();
+        
+        if (IsRightTeleportButton_Down()) OnRightTeleportButton_Down.Invoke();
+        if (IsRightTeleportButton_Up()) OnRightTeleportButton_Up.Invoke();
+        
+        isLeftTeleportButton = IsLeftTeleportButton_Pressed();
+        isRightTeleportButton = IsRightTeleportButton_Pressed();
     }
 
-    private bool IsTeleportButton_Down()
+    private bool IsLeftTeleportButton_Pressed()
     {
-        return rightTeleportAction.triggered || leftTeleportAction.triggered;
+        return leftTeleportAction.IsPressed();
     }
     
-    private bool IsTeleportButton_Pressed()
+    private bool IsLeftTeleportButton_Down() => !isLeftTeleportButton && IsLeftTeleportButton_Pressed();
+    
+    private bool IsLeftTeleportButton_Up() => isLeftTeleportButton && !IsLeftTeleportButton_Pressed();
+    
+    private bool IsRightTeleportButton_Pressed()
     {
-        return rightTeleportAction.IsPressed() || leftTeleportAction.IsPressed();
+        return rightTeleportAction.IsPressed();
     }
     
-    private bool IsTeleportButton_Up()
-    {
-        return !(rightTeleportAction.IsPressed() && rightTeleportAction.triggered) 
-               || !(leftTeleportAction.IsPressed() && leftTeleportAction.triggered);
-    }
+    private bool IsRightTeleportButton_Down() => !isRightTeleportButton && IsRightTeleportButton_Pressed();
+    
+    private bool IsRightTeleportButton_Up() => isRightTeleportButton && !IsRightTeleportButton_Pressed();
 }
