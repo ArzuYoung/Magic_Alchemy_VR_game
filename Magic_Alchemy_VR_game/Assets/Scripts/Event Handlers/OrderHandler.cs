@@ -13,6 +13,16 @@ namespace EventHandlers
             _order = GetComponent<Order>();
         }
 
+        private void OnEnable()
+        {
+            Box.GetCurrentOrder += GetCurrentOrder;
+        }
+
+        private void OnDisable()
+        {
+            Box.GetCurrentOrder -= GetCurrentOrder;
+        }
+
         private ElementType GetCurrentOrder() => _order.CurrentOrder;
     }
 }
