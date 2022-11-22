@@ -6,9 +6,11 @@ namespace Gameplay.Elements
     public class ElementsMerging : MonoBehaviour
     {
         [SerializeField] private ElementType _type;
+        [SerializeField] private Sprite _icon;
 
         public ElementType Type { get => _type; }
         public bool Active { get; private set; }
+        public Sprite Sprite { get => _icon; }
 
         public static event Func<ElementType, ElementType, ElementType> GetMergeElement;
         public static event Func<ElementType, GameObject> GetElementPrefab;

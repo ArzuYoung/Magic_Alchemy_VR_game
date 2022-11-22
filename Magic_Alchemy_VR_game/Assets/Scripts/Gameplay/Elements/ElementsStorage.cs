@@ -8,14 +8,16 @@ namespace Gameplay.Elements
     {
         [SerializeField] private ElementsMerging[] _elements;
 
-        private readonly Dictionary<ElementType, GameObject> _elementsDictionary = new();
+        private readonly Dictionary<ElementType, ElementsMerging> _elementsDictionary = new();
 
-        public GameObject GetPrefab(ElementType type) => _elementsDictionary[type];
+        public GameObject GetPrefab(ElementType type) => _elementsDictionary[type].gameObject;
+
+        public Sprite GetSprite(ElementType type) => _elementsDictionary[type].Sprite;
 
         private void Awake()
         {
             foreach (var element in _elements)
-                _elementsDictionary.Add(element.Type, element.gameObject);
+                _elementsDictionary.Add(element.Type, element);
         }
     }
 }
