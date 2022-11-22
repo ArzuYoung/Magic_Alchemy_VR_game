@@ -10,10 +10,21 @@ namespace Gameplay.Order
         [SerializeField] private Light _light;
         [SerializeField] private Color _wrongColor;
         [SerializeField] private Color _correctColor;
+        [SerializeField] private float _checkingRadius;
 
         public static event Func<ElementType> GetCurrentOrder;
 
         public bool OrderIsCorrect { get; private set; }
+
+        public void RemoveContent()
+        {
+            var colliders = Physics.OverlapSphere(transform.position, _checkingRadius);
+            foreach (var collider in colliders)
+            {
+                if (collider.GetComponent<ElementsMerging>() != null)
+                    Destroy(collider.gameObject);
+            }
+        }
 
         private void Start()
         {
@@ -46,6 +57,11 @@ namespace Gameplay.Order
                     OrderIsCorrect = false;
                 }
             }
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.DrawWireSphere(transform.position, _checkingRadius);
         }
 
         private bool OrderExists()
