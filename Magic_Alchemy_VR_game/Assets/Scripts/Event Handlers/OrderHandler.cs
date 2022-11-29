@@ -1,4 +1,5 @@
 using Gameplay.Order;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace EventHandlers
@@ -25,6 +26,12 @@ namespace EventHandlers
             SendingButton.OrderDone -= _order.Generate;
         }
 
-        private ElementType GetCurrentOrder() => _order.CurrentOrder;
+        private KeyValuePair<ElementType, int> GetCurrentOrder() => _order.CurrentOrder;
+
+        private void FinishOrder()
+        {
+
+            _order.Generate();
+        }
     }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
 
 namespace Gameplay.Elements
 {
@@ -17,7 +18,24 @@ namespace Gameplay.Elements
             new MergePoint(ElementType.Fire, ElementType.Ground, ElementType.Lava),
         };
 
-        public ElementType GetBy(ElementType first, ElementType second)
+        private readonly Dictionary<ElementType, int> _costs = new Dictionary<ElementType, int>
+        {
+            [ElementType.Ground] = 0,
+            [ElementType.Air] = 0,
+            [ElementType.Fire] = 0,
+            [ElementType.Water] = 0,
+            [ElementType.Lake] = 14,
+            [ElementType.Air] = 8,
+            [ElementType.Lava] = 16,
+            [ElementType.Grass] = 6,
+            [ElementType.Warm] = 9,
+            [ElementType.Steam] = 7,
+            [ElementType.Cloud] = 12,
+            [ElementType.Rock] = 5,
+            [ElementType.Wind] = 10,
+        };
+
+        public ElementType GetElementBy(ElementType first, ElementType second)
         {
             foreach (var mergePoint in _mergeList)
             {
@@ -26,6 +44,13 @@ namespace Gameplay.Elements
                     return mergePoint.NewElement;
             }
             return ElementType.None;
+        }
+
+        public int GetCost(ElementType type)
+        {
+            if (_costs.ContainsKey(type))
+                return _costs[type];
+            return 0;
         }
     }
 

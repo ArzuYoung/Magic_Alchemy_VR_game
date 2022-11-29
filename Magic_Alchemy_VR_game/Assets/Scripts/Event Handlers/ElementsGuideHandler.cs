@@ -1,10 +1,11 @@
 using UnityEngine;
 using Gameplay.Elements;
+using Gameplay.Order;
 
 namespace EventHandlers
 {
     [RequireComponent(typeof(ElementsGuide))]
-    public class MergeElementsHandler : MonoBehaviour
+    public class ElementsGuideHandler : MonoBehaviour
     {
         private ElementsGuide _elementsGuide;
 
@@ -15,12 +16,14 @@ namespace EventHandlers
 
         private void OnEnable()
         {
-            ElementsMerging.GetMergeElement += _elementsGuide.GetBy;
+            ElementsMerging.GetMergeElement += _elementsGuide.GetElementBy;
+            Order.GetElementCost += _elementsGuide.GetCost;
         }
 
         private void OnDisable()
         {
-            ElementsMerging.GetMergeElement -= _elementsGuide.GetBy;
+            ElementsMerging.GetMergeElement -= _elementsGuide.GetElementBy;
+            Order.GetElementCost -= _elementsGuide.GetCost;
         }
     }
 

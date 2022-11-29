@@ -1,5 +1,6 @@
 using Gameplay.Elements;
 using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ namespace Gameplay.Order
         [SerializeField] private Color _correctColor;
         [SerializeField] private float _checkingRadius;
 
-        public static event Func<ElementType> GetCurrentOrder;
+        public static event Func<KeyValuePair<ElementType, int>> GetCurrentOrder;
 
         public bool OrderIsCorrect { get; private set; }
 
@@ -37,7 +38,7 @@ namespace Gameplay.Order
             if (other.TryGetComponent<ElementsMerging>(out var element))
             {
                 var currentOrder = GetCurrentOrder?.Invoke();
-                if (element.Type == currentOrder.GetValueOrDefault())
+                if (element.Type == currentOrder.GetValueOrDefault().Key)
                 {
                     SetCorrectColor();
                     OrderIsCorrect = true;
@@ -51,7 +52,7 @@ namespace Gameplay.Order
             if (other.TryGetComponent<ElementsMerging>(out var element))
             {
                 var currentOrder = GetCurrentOrder?.Invoke();
-                if (element.Type == currentOrder.GetValueOrDefault())
+                if (element.Type == currentOrder.GetValueOrDefault().Key)
                 {
                     SetWorngColor();
                     OrderIsCorrect = false;
@@ -67,7 +68,7 @@ namespace Gameplay.Order
         private bool OrderExists()
         {
             var currentOrder = GetCurrentOrder?.Invoke();
-            if (currentOrder.GetValueOrDefault() == ElementType.None)
+            if (currentOrder == null || currentOrder.GetValueOrDefault().Key == ElementType.None)
                 return false;
             return true;
         }
