@@ -17,11 +17,17 @@ namespace EventHandlers
         private void OnEnable()
         {
             Order.CashGetted += _wallet.AddCoints;
+            PhilosopherStoneBoard.GetCoinsCount += GetCoinsCount;
+            PhilosopherStoneBoard.AddCoins += _wallet.AddCoints;
         }
 
         private void OnDisable()
         {
             Order.CashGetted -= _wallet.AddCoints;
+            PhilosopherStoneBoard.GetCoinsCount -= GetCoinsCount;
+            PhilosopherStoneBoard.AddCoins -= _wallet.AddCoints;
         }
+
+        private int GetCoinsCount() => _wallet.CoinsCount;
     }
 }

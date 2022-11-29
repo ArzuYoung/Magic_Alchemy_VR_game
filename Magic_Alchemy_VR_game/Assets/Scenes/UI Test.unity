@@ -2991,6 +2991,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4208458315195486, guid: c96016c34e7be62488e588470988ef5b, type: 3}
   m_PrefabInstance: {fileID: 272016587}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &295894214 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 329976856762887740, guid: ad596f7fbeb0c33419e8f1fd394eddef, type: 3}
+  m_PrefabInstance: {fileID: 329976856483812090}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &309975891
 GameObject:
   m_ObjectHideFlags: 0
@@ -19883,6 +19888,7 @@ Transform:
   - {fileID: 8075315911552559120}
   - {fileID: 969628298971190571}
   - {fileID: 6961215808251109182}
+  - {fileID: 295894214}
   m_Father: {fileID: 1506837463}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19984,6 +19990,63 @@ Transform:
   m_Father: {fileID: 1869722228100113826}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &329976856483812090
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 203820554351729749}
+    m_Modifications:
+    - target: {fileID: 329976856762887740, guid: ad596f7fbeb0c33419e8f1fd394eddef, type: 3}
+      propertyPath: m_RootOrder
+      value: 62
+      objectReference: {fileID: 0}
+    - target: {fileID: 329976856762887740, guid: ad596f7fbeb0c33419e8f1fd394eddef, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.501
+      objectReference: {fileID: 0}
+    - target: {fileID: 329976856762887740, guid: ad596f7fbeb0c33419e8f1fd394eddef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.498
+      objectReference: {fileID: 0}
+    - target: {fileID: 329976856762887740, guid: ad596f7fbeb0c33419e8f1fd394eddef, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.901
+      objectReference: {fileID: 0}
+    - target: {fileID: 329976856762887740, guid: ad596f7fbeb0c33419e8f1fd394eddef, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 329976856762887740, guid: ad596f7fbeb0c33419e8f1fd394eddef, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329976856762887740, guid: ad596f7fbeb0c33419e8f1fd394eddef, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329976856762887740, guid: ad596f7fbeb0c33419e8f1fd394eddef, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329976856762887740, guid: ad596f7fbeb0c33419e8f1fd394eddef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329976856762887740, guid: ad596f7fbeb0c33419e8f1fd394eddef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329976856762887740, guid: ad596f7fbeb0c33419e8f1fd394eddef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329976856762887743, guid: ad596f7fbeb0c33419e8f1fd394eddef, type: 3}
+      propertyPath: m_Name
+      value: Philosopher Stone Board
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ad596f7fbeb0c33419e8f1fd394eddef, type: 3}
 --- !u!1 &339265815276565357
 GameObject:
   m_ObjectHideFlags: 0
