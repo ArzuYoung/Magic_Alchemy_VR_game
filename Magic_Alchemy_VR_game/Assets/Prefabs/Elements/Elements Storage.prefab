@@ -28,7 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.1054078, y: 0.30933625, z: -0.55102813}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -46,18 +46,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _elements:
-  - {fileID: 1220881132937028273, guid: 6a6690d962dde92479cd7bd6aeea2bfe, type: 3}
-  - {fileID: 2242911060566893955, guid: 9d9e0f44adac7b94382b1788b7975ccb, type: 3}
-  - {fileID: 2844645905020304347, guid: 6f0c9dd5b26f93341a4ab8536eb6a71f, type: 3}
   - {fileID: 8365323412930695588, guid: a1d109278286db044a0da2bbefddeef6, type: 3}
   - {fileID: 3914725947479364359, guid: d3efcb05c946acb45a169d8f6f368fb3, type: 3}
-  - {fileID: 3204496301342980912, guid: 6e516ed19fdb67541b718a519fc24d8a, type: 3}
+  - {fileID: 2844645905020304347, guid: 6f0c9dd5b26f93341a4ab8536eb6a71f, type: 3}
+  - {fileID: 3204496301342980912, guid: 9e7fd5495f8a4f8468e6c099f024348b, type: 3}
+  - {fileID: 2242911060566893955, guid: 9d9e0f44adac7b94382b1788b7975ccb, type: 3}
   - {fileID: 7027357995595864141, guid: 02e0921e0b93e104583ceeea14ad984e, type: 3}
   - {fileID: 422271456708712445, guid: caf7f6aceb0abd7468d7b486698fac4a, type: 3}
   - {fileID: 4046135169703033387, guid: 33f3eba5c47bfc142b44d01046de8b01, type: 3}
-  - {fileID: 493748538480594422, guid: 5c5b5d57cbcba4f43b290cbc38e5d477, type: 3}
-  - {fileID: 5897341878786585053, guid: b904e5f9bc0b2b844b7019a167f96b04, type: 3}
   - {fileID: 7852479048310894354, guid: 2778bf7970b9cf54cb63353c4933de21, type: 3}
+  - {fileID: 493748538480594422, guid: 5c5b5d57cbcba4f43b290cbc38e5d477, type: 3}
+  - {fileID: 1220881132937028273, guid: 6a6690d962dde92479cd7bd6aeea2bfe, type: 3}
+  - {fileID: 1380569202053006679, guid: ff59b6f40c6a264429be281c85add611, type: 3}
 --- !u!114 &2269578014443502950
 MonoBehaviour:
   m_ObjectHideFlags: 0
