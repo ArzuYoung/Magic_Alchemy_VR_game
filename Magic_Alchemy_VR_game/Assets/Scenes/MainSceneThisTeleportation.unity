@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44617236, g: 0.4907189, b: 0.54644656, a: 1}
+  m_IndirectSpecularColor: {r: 0.44617194, g: 0.49071866, b: 0.54644585, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2053,7 +2053,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 9079430736257326509, guid: a496f66b69f2cf347bc65d3769014044, type: 3}
+  m_ModelPrefab: {fileID: 4819938865240846243, guid: 528d89613f6d8c445861abc9516c8388, type: 3}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -3164,7 +3164,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &309975892
 Transform:
   m_ObjectHideFlags: 0
@@ -3553,7 +3553,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 9079430736257326509, guid: a496f66b69f2cf347bc65d3769014044, type: 3}
+  m_ModelPrefab: {fileID: 1289153032914833151, guid: dda957f09703de8478f9b2e02fc9f37f, type: 3}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -5779,7 +5779,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &543431533
 Transform:
   m_ObjectHideFlags: 0
@@ -6168,7 +6168,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 9079430736257326509, guid: a496f66b69f2cf347bc65d3769014044, type: 3}
+  m_ModelPrefab: {fileID: 4819938865240846243, guid: 528d89613f6d8c445861abc9516c8388, type: 3}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -6967,10 +6967,22 @@ MonoBehaviour:
   OnLeftTeleportButton_Up:
     m_PersistentCalls:
       m_Calls: []
+  OnLeftGripButton_Down:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLeftGripButton_Up:
+    m_PersistentCalls:
+      m_Calls: []
   OnRightTeleportButton_Down:
     m_PersistentCalls:
       m_Calls: []
   OnRightTeleportButton_Up:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRightGripButton_Down:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRightGripButton_Up:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &623939607
@@ -8008,6 +8020,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6171120354465068554, guid: 1ee92240685bfb34280701d419be5847, type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171120354465068555, guid: 1ee92240685bfb34280701d419be5847, type: 3}
+      propertyPath: m_IgnoreReversedGraphics
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6171120354515268514, guid: 1ee92240685bfb34280701d419be5847, type: 3}
@@ -9534,7 +9550,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 9079430736257326509, guid: a496f66b69f2cf347bc65d3769014044, type: 3}
+  m_ModelPrefab: {fileID: 1289153032914833151, guid: dda957f09703de8478f9b2e02fc9f37f, type: 3}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0

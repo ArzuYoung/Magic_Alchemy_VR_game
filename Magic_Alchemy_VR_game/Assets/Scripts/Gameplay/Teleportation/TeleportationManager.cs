@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -14,7 +15,7 @@ public class TeleportationManager : MonoBehaviour
     [SerializeField] private GameObject controllerLeftTeleport;
     [Space]
     [SerializeField] private TeleportationProvider teleportationProvider;
-    
+
     void Start()
     {
         controllerRightGrab.SetActive(true);
@@ -74,7 +75,7 @@ public class TeleportationManager : MonoBehaviour
     private void TeleportToPointContactOfLeftBeam()
     {
         if (rayInteractorRight.enabled) return;
-        
+
         if (!rayInteractorLeft.TryGetCurrent3DRaycastHit(out RaycastHit hit))
         {
             return;
