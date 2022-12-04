@@ -701,6 +701,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3168938621812372392}
   - component: {fileID: 5018680002129825680}
+  - component: {fileID: 4634577095930156218}
   m_Layer: 0
   m_Name: StylizedHand
   m_TagString: Untagged
@@ -792,6 +793,20 @@ SkinnedMeshRenderer:
     m_Center: {x: -1.0276742, y: 3.9805865, z: 0.043000817}
     m_Extent: {x: 3.0662003, y: 4.0824122, z: 0.73547906}
   m_DirtyAABB: 0
+--- !u!64 &4634577095930156218
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6465780399612322873}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8678823145569952518, guid: dbc44f6b99a984be3b652ea5127614d9, type: 3}
 --- !u!1 &6751291053396316178
 GameObject:
   m_ObjectHideFlags: 0
