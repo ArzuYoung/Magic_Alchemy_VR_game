@@ -704,7 +704,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 675252}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 84090723}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1602,7 +1603,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 675252}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 161984301}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2276,7 +2278,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 675252}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 206950733}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2561,7 +2564,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 675252}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 212033420}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -4670,7 +4674,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 675252}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 414380727}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -8084,7 +8089,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 675252}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 744015597}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -9926,7 +9932,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 675252}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 870317994}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -10737,7 +10744,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 675252}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 911286875}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -11848,7 +11856,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 675252}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 1086012480}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -11993,7 +12002,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 675252}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 1086818350}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -15149,7 +15159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 675252}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 1458732672}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -15496,7 +15507,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 675252}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 1493442269}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -15676,7 +15688,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 675252}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 1507459235}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -17173,7 +17186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 675252}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 1667180956}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -18084,7 +18098,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 675252}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 1843402611}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -19927,7 +19942,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 675252}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 2036185875}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
