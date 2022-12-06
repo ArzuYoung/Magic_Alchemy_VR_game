@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Gameplay.Order
@@ -9,6 +10,8 @@ namespace Gameplay.Order
         [SerializeField] private float _lightIntensityNotBusy;
 
         private Box _box;
+
+        public static event Action BoxFixed;
 
         public bool Busy { get => _box != null; }
 
@@ -43,6 +46,7 @@ namespace Gameplay.Order
             {
                 _box = box;
                 SetLightIntensity(_lightIntensityBusy);
+                BoxFixed?.Invoke();
             }
         }
 
