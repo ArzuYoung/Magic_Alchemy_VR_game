@@ -12,3 +12,4 @@ namespace Gameplay.Elements
         public GameObject GetPrefab() => GetElementPrefab?.Invoke(_type);
     }
 }
+

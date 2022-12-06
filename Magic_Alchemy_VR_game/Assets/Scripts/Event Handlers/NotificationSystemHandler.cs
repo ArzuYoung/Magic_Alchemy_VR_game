@@ -1,5 +1,6 @@
-using Gameplay;
+using Gameplay.Notifications;
 using Gameplay.Order;
+using System;
 using UnityEngine;
 
 namespace EventHandlers
@@ -10,6 +11,8 @@ namespace EventHandlers
         [SerializeField] private float _showingCashTime;
 
         private NotificationSystem _notificationSystem;
+
+        public static event Func<bool> TutorialDone;
 
         private void Awake()
         {
@@ -28,7 +31,9 @@ namespace EventHandlers
 
         private void ShowCash(int value)
         {
-            _notificationSystem.Show($"Заказ выполнен.\nПолучено {value} монет.", _showingCashTime);
+            var tutorialDone = TutorialDone?.Invoke();
+            if (tutorialDone.GetValueOrDefault())
+                _notificationSystem.Show($"Заказ выполнен.\nПолучено {value} монет.", _showingCashTime);
         }
     }
 }

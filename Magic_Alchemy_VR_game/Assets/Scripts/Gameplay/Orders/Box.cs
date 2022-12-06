@@ -14,6 +14,8 @@ namespace Gameplay.Order
         [SerializeField] private float _checkingRadius;
 
         public static event Func<KeyValuePair<ElementType, int>> GetCurrentOrder;
+        public static event Action WrongElement;
+        public static event Action CorrectElement;
 
         public bool OrderIsCorrect { get; private set; }
 
@@ -42,7 +44,10 @@ namespace Gameplay.Order
                 {
                     SetCorrectColor();
                     OrderIsCorrect = true;
+                    CorrectElement?.Invoke();
                 }
+                else
+                    WrongElement?.Invoke();
             }
         }
 

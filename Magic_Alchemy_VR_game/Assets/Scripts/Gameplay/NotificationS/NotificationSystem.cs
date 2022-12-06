@@ -2,24 +2,28 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-namespace Gameplay
+namespace Gameplay.Notifications
 {
     public class NotificationSystem : MonoBehaviour
     {
         [SerializeField] private GameObject _notificationPanel;
         [SerializeField] private TextMeshProUGUI _text;
+        [SerializeField] private TextMeshProUGUI _clickText;
 
         private Coroutine _hideCoroutine;
 
-        public void Show(string text)
+        public bool CanSkip { get => _clickText.gameObject.activeSelf; }
+
+        public void Show(string text, bool canSkip = false)
         {
             _text.text = text;
             _notificationPanel.SetActive(true);
+            _clickText.gameObject.SetActive(canSkip);
         }
 
-        public void Show(string text, float hideTime)
+        public void Show(string text, float hideTime, bool canSkip = false)
         {
-            Show(text);
+            Show(text, canSkip);
             _hideCoroutine = StartCoroutine(Hide(hideTime));
         }
 
@@ -27,8 +31,8 @@ namespace Gameplay
 
         private void Awake()
         {
-            gameObject.SetActive(false);
-            Show("Добро пожаловать!", 5f);
+            //Show("Добро пожаловать!", 5f);
+            //gameObject.SetActive(false);
         }
 
         private IEnumerator Hide(float afterSeconds)
