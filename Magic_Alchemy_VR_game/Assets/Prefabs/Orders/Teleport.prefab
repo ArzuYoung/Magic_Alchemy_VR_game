@@ -44,7 +44,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.7265912, g: 0.109803915, b: 1, a: 1}
-  m_Intensity: 20
+  m_Intensity: 0.5
   m_Range: 10.5
   m_SpotAngle: 47
   m_InnerSpotAngle: 21.80208
@@ -125,8 +125,8 @@ Transform:
   m_GameObject: {fileID: 7211461795189723758}
   m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -0.78400433, y: -0.02441225, z: 0.75612056}
-  m_LocalScale: {x: 15.681335, y: 15.681335, z: 15.681335}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 117.7, y: 117.7, z: 117.7}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 642267918651349112}
   m_Father: {fileID: 0}
@@ -221,8 +221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _light: {fileID: 3919989118955164707}
-  _lightIntensityBusy: 20
-  _lightIntensityNotBusy: 5
+  _lightIntensityBusy: 2
+  _lightIntensityNotBusy: 0.5
 --- !u!114 &4874000482008584506
 MonoBehaviour:
   m_ObjectHideFlags: 0
