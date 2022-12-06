@@ -18,13 +18,13 @@ namespace Animation
 
             if (isLeftHand)
             {
-                InputHandler.Instance.OnLeftGripButton_Down.AddListener(SetDefaultHand);
-                InputHandler.Instance.OnLeftGripButton_Up.AddListener(SetGripHand);
+                InputHandler.Instance.OnLeftGripButton_Down.AddListener(SetGripHand);
+                InputHandler.Instance.OnLeftGripButton_Up.AddListener(SetDefaultHand);
             }
             else
             {
-                InputHandler.Instance.OnRightGripButton_Down.AddListener(SetDefaultHand);
-                InputHandler.Instance.OnRightGripButton_Up.AddListener(SetGripHand);
+                InputHandler.Instance.OnRightGripButton_Down.AddListener(SetGripHand);
+                InputHandler.Instance.OnRightGripButton_Up.AddListener(SetDefaultHand);
             }
         }
 
