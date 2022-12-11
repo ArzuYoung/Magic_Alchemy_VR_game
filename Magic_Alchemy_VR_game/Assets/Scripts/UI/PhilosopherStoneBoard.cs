@@ -11,7 +11,7 @@ namespace UI
         [SerializeField] private TextMeshProUGUI _costText;
         [SerializeField] private Image _stoneImage;
         [SerializeField] private Image _coinImage;
-        [SerializeField] private Button _buyButton;
+        [SerializeField] private BuyButton _buyButton;
         [SerializeField] private Sprite _markSprite;
         [SerializeField] private int _cost = 100;
 
@@ -23,22 +23,26 @@ namespace UI
         public void CheckButtonInteractable(int coins)
         {
             if (_sold) return;
-            _buyButton.interactable = coins >= _cost;
+            //_buyButton.interactable = coins >= _cost;
         }
 
         private void Awake()
         {
             var coins = GetCoinsCount?.Invoke();
-            CheckButtonInteractable(coins.GetValueOrDefault());
+            //CheckButtonInteractable(coins.GetValueOrDefault());
 
             _buyButton.onClick.AddListener(Buy);
         }
 
         private void Buy()
         {
+            var coins = GetCoinsCount?.Invoke();
+            if (coins < _cost) return; 
+            
             _sold = true;
+            _buyButton.gameObject.SetActive(false);
             AddCoins?.Invoke(-_cost);
-            _titleText.text = "Ïîçäðàâëÿåì!";
+            _titleText.text = "ÐŸÐ¾Ð·Ð´Ñ€Ð°Ð²Ð»ÑÐµÐ¼!";
             _costText.gameObject.SetActive(false);
             _coinImage.gameObject.SetActive(false);
             _buyButton.gameObject.SetActive(false);

@@ -15,12 +15,12 @@ namespace EventHandlers
 
         private void OnEnable()
         {
-            Wallet.CoinsCountChanged += _board.CheckButtonInteractable;
+            //Wallet.CoinsCountChanged += _board.CheckButtonInteractable;
         }
 
         private void OnDisable()
         {
-            Wallet.CoinsCountChanged -= _board.CheckButtonInteractable;
+            //Wallet.CoinsCountChanged -= _board.CheckButtonInteractable;
         }
     }
 }
