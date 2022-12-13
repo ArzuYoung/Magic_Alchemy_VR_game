@@ -1,6 +1,7 @@
 using Gameplay.Elements;
 using Gameplay.Notifications;
 using Gameplay.Order;
+using UI;
 using UnityEngine;
 
 namespace EventHandlers
@@ -20,7 +21,6 @@ namespace EventHandlers
             ElementsMerging.ElementsMerged += StartTutorialChest;
             Box.WrongElement += StartTutorialWrongElement;
             Box.CorrectElement += StartTutorialTeleport;
-            SendingArea.BoxFixed += StartTutorialRedButton;
             SendingButton.OrderDone += StartTutorialEnd;
             NotificationSystemHandler.TutorialDone += TutorialDone;
         }
@@ -30,7 +30,6 @@ namespace EventHandlers
             ElementsMerging.ElementsMerged -= StartTutorialChest;
             Box.WrongElement -= StartTutorialWrongElement;
             Box.CorrectElement -= StartTutorialTeleport;
-            SendingArea.BoxFixed -= StartTutorialRedButton;
             SendingButton.OrderDone -= StartTutorialEnd;
             NotificationSystemHandler.TutorialDone -= TutorialDone;
         }
@@ -41,9 +40,7 @@ namespace EventHandlers
 
         private void StartTutorialTeleport() => _tutorial.Next(3);
 
-        private void StartTutorialRedButton() => _tutorial.Next(4);
-
-        private void StartTutorialEnd() => _tutorial.Next(5);
+        private void StartTutorialEnd() => _tutorial.Next(4);
 
         private bool TutorialDone() => _tutorial.TutorialDone;
     }

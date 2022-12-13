@@ -60,13 +60,13 @@ namespace Gameplay.Notifications
 
             var tutorialTextsPart4 = new Queue<(string, bool)>();
             tutorialTextsPart4.Enqueue(("Ура! Первый заказ выполнен согласно требованиям.", true));
-            tutorialTextsPart4.Enqueue(("Помести сундук с соединением на платформу в углу комнаты.", false));
+            tutorialTextsPart4.Enqueue(("А теперь нажми на красную кнопку для отправки заказа.", false));
 
             var tutorialTextsPart5 = new Queue<(string, bool)>();
-            tutorialTextsPart5.Enqueue(("Не забудь нажать на красную кнопку для отправки заказа.", false));
+            tutorialTextsPart5.Enqueue(("Вот и выполнен первый заказ. Продолжай в том же духе. Удачи!", true));
 
             var tutorialTextsPart6 = new Queue<(string, bool)>();
-            tutorialTextsPart6.Enqueue(("Вот и выполнен первый заказ. Продолжай в том же духе. Удачи!", true));
+            tutorialTextsPart6.Enqueue(("Поздравляем! Цель достигнута. Благодарим за прохождение демо-версии “Magic Alchemy”!", true));
 
             _tutorialTexts = new List<Queue<(string, bool)>>
             {
@@ -75,7 +75,6 @@ namespace Gameplay.Notifications
                 tutorialTextsPart3,
                 tutorialTextsPart4,
                 tutorialTextsPart5,
-                tutorialTextsPart6,
             };
 
             Next(0);

@@ -19,16 +19,17 @@ namespace UI
 
         public static event Func<int> GetCoinsCount;
         public static event Action<int> AddCoins;
+        public static event Action Purchased;
 
-        public void CheckButtonInteractable(int coins)
-        {
-            if (_sold) return;
-            //_buyButton.interactable = coins >= _cost;
-        }
+        //public void CheckButtonInteractable(int coins)
+        //{
+        //    if (_sold) return;
+        //    //_buyButton.interactable = coins >= _cost;
+        //}
 
         private void Awake()
         {
-            var coins = GetCoinsCount?.Invoke();
+            //var coins = GetCoinsCount?.Invoke();
             //CheckButtonInteractable(coins.GetValueOrDefault());
 
             _buyButton.onClick.AddListener(Buy);
@@ -47,6 +48,8 @@ namespace UI
             _coinImage.gameObject.SetActive(false);
             _buyButton.gameObject.SetActive(false);
             _stoneImage.sprite = _markSprite;
+
+            Purchased?.Invoke();
         }
     }
 }
