@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[AddComponentMenu("My components/Teleport")]
-public class Leav : MonoBehaviour
+public class SceneChanger : MonoBehaviour
 {
-
-    [Header("0")]
     public int sceneIndex;
 
-    void OnTriggerEnter(Collider myCollider)
+    void OnTriggerEnter(Collider MainCamera)
     {
-        if (myCollider.tag == ("Player"))
+        if (MainCamera.tag == ("Main camera"))
         {
             SceneManager.LoadScene(sceneIndex);
         }

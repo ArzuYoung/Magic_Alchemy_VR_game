@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: portal
+  m_Name: Exit
   m_Shader: {fileID: 200, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -42,8 +42,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 84583c39e752d11408c0c234ab539448, type: 3}
-        m_Scale: {x: 0.68, y: 0.46}
-        m_Offset: {x: -2.9, y: 0.27}
+        m_Scale: {x: 0.87, y: 0.46}
+        m_Offset: {x: -5.87, y: 0.13}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -75,5 +75,5 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmisColor: {r: 0.2, g: 0.2, b: 0.2, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _TintColor: {r: 0.0627451, g: 0.4627451, b: 0.18590003, a: 1}
+    - _TintColor: {r: 1, g: 0.018256633, b: 0, a: 1}
   m_BuildTextureStacks: []
