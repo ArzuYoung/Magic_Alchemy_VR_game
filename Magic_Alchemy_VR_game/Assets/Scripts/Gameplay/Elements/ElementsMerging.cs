@@ -13,20 +13,23 @@ namespace Gameplay.Elements
         public ElementType Type { get => _type; }
         public bool Active { get; private set; }
         public Sprite Sprite { get => _icon; }
+        public GameObject effect;
 
         public static event Func<ElementType, ElementType, ElementType> GetMergeElement;
         public static event Func<ElementType, GameObject> GetElementPrefab;
         public static event Action ElementsMerged;
 
+
         private void OnCollisionEnter(Collision collision)
         {
             var other = collision.gameObject.GetComponent<ElementsMerging>();
             if (other == null || other.Active)
-                return;
+            return;
 
             Active = true;
             var resultElementTypeNullable = GetMergeElement?.Invoke(_type, other.Type);
             var resultElementType = resultElementTypeNullable.GetValueOrDefault(ElementType.None);
+
 
             ElementsMerged?.Invoke();
             Destroy(gameObject);
