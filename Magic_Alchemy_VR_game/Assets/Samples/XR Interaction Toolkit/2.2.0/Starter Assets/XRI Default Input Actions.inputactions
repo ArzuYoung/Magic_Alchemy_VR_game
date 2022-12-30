@@ -310,6 +310,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
+                    "action": "UI Press",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4eb41517-4807-4bb1-a373-d457bda8ba7c",
+                    "path": "<ViveController>{LeftHand}/trackpadClicked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Activate",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -321,18 +332,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
-                    "action": "Activate Value",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4eb41517-4807-4bb1-a373-d457bda8ba7c",
-                    "path": "<ViveController>{LeftHand}/trackpadClicked",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UI Press",
+                    "action": "UI Press Value",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -767,7 +767,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
-                    "action": "Activate",
+                    "action": "UI Press",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -778,18 +778,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
-                    "action": "Activate Value",
+                    "action": "UI Press Value",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "780ced53-b749-4cdc-b97c-a459c0192f02",
+                    "id": "a697e8b0-f2e7-42f3-bd6e-8e0ed000f5d2",
                     "path": "<ViveController>{RightHand}/trackpadClicked",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "UI Press",
+                    "action": "Activate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

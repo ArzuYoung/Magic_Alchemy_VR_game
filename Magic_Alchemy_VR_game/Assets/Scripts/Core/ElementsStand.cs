@@ -9,13 +9,23 @@ namespace Core
     {
         [SerializeField] private ElementType elementType;
         [SerializeField] private Transform spawnPoint;
-
+        [SerializeField] private float SecondBeforeSpawn = 2f;
+        
         private bool isStartSpawn = false;
 
-        private void OnCollisionExit(Collision other)
+        private float timer;
+
+        private void Update()
         {
-            if (!IsContainMyElement() && !isStartSpawn)
-                StartCoroutine(SpawnElement());
+            if (timer <= 0)
+            {
+                if (!IsContainMyElement() && !isStartSpawn)
+                    StartCoroutine(SpawnElement());
+                
+                timer = SecondBeforeSpawn;
+            }
+            else
+                timer -= Time.deltaTime;
         }
 
         private bool IsContainMyElement()
@@ -38,7 +48,7 @@ namespace Core
         private IEnumerator SpawnElement()
         {
             isStartSpawn = true;
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(1f);
             
             var prefabElement = ElementsStorage.Instance.GetPrefab(elementType);
             Instantiate(prefabElement,

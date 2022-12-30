@@ -82,8 +82,6 @@ public class TeleportationManager : MonoBehaviour
             return;
         }
 
-        if (hit.rigidbody.gameObject.layer != 7) return;
-        
         var teleportRequest = new TeleportRequest()
         {
             destinationPosition = hit.point,

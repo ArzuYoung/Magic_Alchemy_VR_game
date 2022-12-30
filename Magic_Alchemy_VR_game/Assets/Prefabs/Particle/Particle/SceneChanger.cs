@@ -9,9 +9,10 @@ public class SceneChanger : MonoBehaviour
 
     void OnTriggerEnter(Collider MainCamera)
     {
-        if (MainCamera.tag == ("Main camera"))
+        if (MainCamera.tag == ("MainCamera"))
         {
-            SceneManager.LoadScene(sceneIndex);
+            SceneManager.LoadSceneAsync(sceneIndex);
+            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

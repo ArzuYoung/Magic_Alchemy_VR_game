@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -12,6 +13,21 @@ namespace Gameplay.Notifications
         private Queue<(string Text, bool ContinueOnClick)> _currentTutorial;
 
         public bool TutorialDone { get; private set; }
+
+        private void Start()
+        {
+            InputHandler.Instance.OnRightUiPressedButton_Down.AddListener(()=>
+            {
+                if(_notificationSystem.CanSkip)
+                    Next();
+            });
+            
+            InputHandler.Instance.OnLeftUiPressedButton_Down.AddListener(()=>
+            {
+                if(_notificationSystem.CanSkip)
+                    Next();
+            });
+        }
 
         public void Next()
         {
@@ -43,30 +59,30 @@ namespace Gameplay.Notifications
             _notificationSystem = GetComponent<NotificationSystem>();
 
             var tutorialTextsPart1 = new Queue<(string, bool)>();
-            tutorialTextsPart1.Enqueue(("Привет! Это игра “Magic Alchemy”.", true));
-            tutorialTextsPart1.Enqueue(("Тебе надо выполнять заказы, чтобы накопить монеты на покупку философского камня.", true));
-            tutorialTextsPart1.Enqueue(("Давай попробуем реализовать первый заказ!", true));
-            tutorialTextsPart1.Enqueue(("Для начала возьми необходимые элементы и создай своё первое соединение.", true));
-            tutorialTextsPart1.Enqueue(("P.S. Рецепты в нашей игре аналогичны мобильному приложению “Алхимик”.", false));
+            tutorialTextsPart1.Enqueue(("пїЅпїЅпїЅпїЅпїЅпїЅ! пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅMagic AlchemyпїЅ.", true));
+            tutorialTextsPart1.Enqueue(("пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.", true));
+            tutorialTextsPart1.Enqueue(("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ!", true));
+            tutorialTextsPart1.Enqueue(("пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.", true));
+            tutorialTextsPart1.Enqueue(("P.S. пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.", false));
 
             var tutorialTextsPart2 = new Queue<(string, bool)>();
-            tutorialTextsPart2.Enqueue(("Молодец!", true));
-            tutorialTextsPart2.Enqueue(("Помни о том, что если ты попытаешься получить несуществующее соединение, то произойдёт взрыв!", true));
-            tutorialTextsPart2.Enqueue(("Посмотри! На доске новый заказ.", true));
-            tutorialTextsPart2.Enqueue(("Ты можешь положить соединение в сундук, чтобы проверить правильность выполнения заказа.", false));
+            tutorialTextsPart2.Enqueue(("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!", true));
+            tutorialTextsPart2.Enqueue(("пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ!", true));
+            tutorialTextsPart2.Enqueue(("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ! пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.", true));
+            tutorialTextsPart2.Enqueue(("пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.", false));
 
             var tutorialTextsPart3 = new Queue<(string, bool)>();
-            tutorialTextsPart3.Enqueue(("Что-то пошло не так. Возможно, необходимо реализовать другое соединение.", false));
+            tutorialTextsPart3.Enqueue(("пїЅпїЅпїЅ-пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.", false));
 
             var tutorialTextsPart4 = new Queue<(string, bool)>();
-            tutorialTextsPart4.Enqueue(("Ура! Первый заказ выполнен согласно требованиям.", true));
-            tutorialTextsPart4.Enqueue(("А теперь нажми на красную кнопку для отправки заказа.", false));
+            tutorialTextsPart4.Enqueue(("пїЅпїЅпїЅ! пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.", true));
+            tutorialTextsPart4.Enqueue(("пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.", false));
 
             var tutorialTextsPart5 = new Queue<(string, bool)>();
-            tutorialTextsPart5.Enqueue(("Вот и выполнен первый заказ. Продолжай в том же духе. Удачи!", true));
+            tutorialTextsPart5.Enqueue(("пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅ!", true));
 
             var tutorialTextsPart6 = new Queue<(string, bool)>();
-            tutorialTextsPart6.Enqueue(("Поздравляем! Цель достигнута. Благодарим за прохождение демо-версии “Magic Alchemy”!", true));
+            tutorialTextsPart6.Enqueue(("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ! пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅ пїЅMagic AlchemyпїЅ!", true));
 
             _tutorialTexts = new List<Queue<(string, bool)>>
             {
@@ -78,12 +94,6 @@ namespace Gameplay.Notifications
             };
 
             Next(0);
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Tab) && _notificationSystem.CanSkip)
-                Next();
         }
     }
 }
