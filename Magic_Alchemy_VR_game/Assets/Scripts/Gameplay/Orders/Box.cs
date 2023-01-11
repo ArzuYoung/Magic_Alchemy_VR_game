@@ -27,6 +27,7 @@ namespace Gameplay.Order
                 if (collider.GetComponent<ElementsMerging>() != null)
                     Destroy(collider.gameObject);
             }
+            OrderIsCorrect = false;
             SetWorngColor();
         }
 
